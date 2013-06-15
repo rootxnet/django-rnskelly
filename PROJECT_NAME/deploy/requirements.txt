@@ -1,0 +1,19 @@
+flup
+South==0.8.1
+git+https://github.com/dwaiter/django-goodfields.git
+django-compressor==1.3
+Django==1.5.1
+
+###Optional (DB):
+MySQL-python==1.2.4
+psycopg2==2.5
+
+###Optional Mail:
+django-smtp-ssl==1.0
+
+###Optional extensions:
+git+https://github.com/django-extensions/django-extensions.git
+django-annoying==0.7.7
+PIL==1.1.7
+sorl-thumbnail==11.12
+pytz  # timezone support

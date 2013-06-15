@@ -1,0 +1,12 @@
+<div class="control-group {% if field.errors %}error{% endif %}" id="{{ field.auto_id }}-container">
+    <label for="{{ field.auto_id }}" class="control-label">{% firstof label field.label %} {{ field.required }}</label>
+    <div class="controls">
+        {{ field }}
+        {% if field.errors %}
+            {% for error in field.errors %}<span class="help-inline">{{ error }}</span>{% endfor %}
+        {% endif %}
+        {% if field.help_text %}
+            <p class="help-block">{{ field.help_text }}</p>
+        {% endif %}
+    </div>
+</div>

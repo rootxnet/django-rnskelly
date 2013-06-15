@@ -1,0 +1,18 @@
+from settings import *
+
+DEBUG = False
+TEMPLATE_DEBUG = False
+THUMBNAIL_DEBUG = False
+
+COMPRESS_PRECOMPILERS = [
+    ('text/less', '/home/djangoenv/node_modules/.bin/lessc {infile} {outfile}')
+]
+
+#Mail
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = "example.com"
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "mailer@example.com"
+EMAIL_HOST_PASSWORD = ""
+DEFAULT_FROM_EMAIL = "mailer@example.com"

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load goodfields %}
+{% block content %}
+    <div class="container">
+        <header id="header">
+            <h1>Some cool headline</h1>
+            <h3>Lorem ipsum</h3>
+            <p class="buttons">
+                <a href="{% url 'registration_register' %}" class="btn btn-large btn-primary first">Register now!</a>
+                or
+                <a href="{% url 'auth_login' %}" class="btn btn-large">Log in</a>
+            </p>
+        </header>
+    </div>
+{% endblock %}

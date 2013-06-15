@@ -1,0 +1,81 @@
+@import url(/site_media/bootstrap/less/mixins.less);
+@import url(/site_media/bootstrap/less/variables.less);
+
+body {
+    background: url("/site_media/img/grid-18px-masked.png") repeat-x top;
+}
+
+#wrapper {
+    margin-top: 50px;
+}
+
+header, #header {
+    h1 {
+        font-size: 48px;
+        font-weight: bold;
+    }
+    h3 {
+        width: 80%;
+        margin: 0 auto;
+        margin-top: 30px;
+        font-size: 20px;
+        font-weight: normal
+    }
+    .pre-signup-container {
+        border-top: 1px solid #E5E5E5;
+        width: 420px;
+        margin: 70px auto 0;
+        padding: 10px 0;
+    }
+    p.buttons {
+        .btn-large {
+            &.first {
+                margin-left: 0;
+            }
+            border-radius: 6px 6px 6px 6px;
+            font-size: 20px;
+            font-weight: normal;
+            margin: 0 10px;
+            padding: 14px 24px;
+        }
+        margin-top: 26px;
+        font-size: 18px;
+        line-height: 36px;
+    }
+    margin-top: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+footer, #footer {
+    border-top: 1px solid #E5E5E5;
+    margin-top: 45px;
+    padding: 35px 0 36px;
+}
+
+.registration-wrapper {
+    .heading {
+        padding: 15px;
+    }
+    fieldset {
+        padding: 0 15px 15px;
+    }
+    form, .form-actions {
+        margin-bottom: 0;
+    }
+    .form-errors {
+        margin: 12px 0 0;
+        color: @red;
+    }
+    .form-horizontal .form-actions {
+        padding-left: 175px;
+    }
+    clear: both;
+    float: none;
+    background: #fff;
+    border: 1px solid #E5E5E5;
+    margin: 24px auto;
+    padding: 0;
+    .border-radius(4px);
+    .box-shadow(0 3px 3px rgba(0,0,0,.075));
+}

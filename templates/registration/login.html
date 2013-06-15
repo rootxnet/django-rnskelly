@@ -1,0 +1,27 @@
+{% extends "registration/registration_base.html" %}
+{% load goodfields %}
+
+{% block title %}Log in{% endblock %}
+
+{% block registration_content %}
+    <div class="heading">
+        <h2>Log in</h2>
+        {% if form.errors %}
+            <div class="form-errors">Your username and password didn't match. Please try again.</div>
+        {% endif %}
+    </div>
+    <form method="post" class="form-horizontal" action="{% url 'django.contrib.auth.views.login' %}">{% csrf_token %}
+        <fieldset>
+            {% goodfield form.username default class "required" %}
+            {% goodfield form.password default class "required" %}
+            <div class="controls">
+                <a href="{% url 'auth_password_reset' %}">Forgot</a> your password? <a
+                    href="{% url 'registration_register' %}">Need an account</a>?
+            </div>
+        </fieldset>
+        <div class="form-actions">
+            <input type="submit" value="Log in" class="btn btn-primary"/>
+            <input type="hidden" name="next" value="{{ next }}"/>
+        </div>
+    </form>
+{% endblock %}

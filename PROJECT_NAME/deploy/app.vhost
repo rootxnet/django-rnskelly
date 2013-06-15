@@ -1,0 +1,30 @@
+<VirtualHost *:80>
+
+        ServerAlias     #DOMAIN_NAME# www.#DOMAIN_NAME#
+        Serveradmin     admin@#DOMAIN_NAME#
+        ServerName      #PROJECT_DOMAIN#
+        DocumentRoot    #PROJECT_ROOT#/#PROJECT_NAME#/deploy/www
+        CustomLog       #PROJECT_ROOT#/#PROJECT_NAME#/deploy/logs/access.log combined
+        ErrorLog        #PROJECT_ROOT#/#PROJECT_NAME#/deploy/logs/error.log
+
+        Alias /site_media  #PROJECT_ROOT#/site_media
+        Alias /static_media  #PROJECT_ROOT#/static_media
+        
+        <Directory #PROJECT_ROOT#/site_media>
+                Order deny,allow
+                Allow from all
+        </Directory>
+        
+        <Directory #PROJECT_ROOT#/static_media>
+                Order deny,allow
+                Allow from all
+        </Directory>
+        
+        WSGIPassAuthorization On
+        WSGIDaemonProcess #DOMAIN_NAME# user=#ENV_USER# python-path=#PROJECT_ROOT#:#PYTHON_PATH# processes=5 threads=1
+        WSGIProcessGroup #DOMAIN_NAME#
+        WSGIScriptAlias / #PROJECT_ROOT#/#PROJECT_NAME#/wsgi.py
+        WSGIScriptReloading On
+
+</VirtualHost>
+
