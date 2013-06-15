@@ -1,0 +1,10 @@
+.DS_Store
+*.pyc
+*.pyo
+*.so
+
+.idea/
+static_media/*
+logs/*
+CACHE/
+settings/local.py
